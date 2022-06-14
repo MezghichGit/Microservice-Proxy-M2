@@ -1,0 +1,16 @@
+
+
+
+spring:  
+  cloud:
+    gateway:
+      routes:
+        - id : PRODUIT-SERVICE
+          uri : lb://PRODUIT-SERVICE
+          predicates :
+            - Path= /produits/**
+            
+        - id : FOURNISSEUR-SERVICE
+          uri : lb://FOURNISSEUR-SERVICE
+          predicates :
+            - Path= /provider/**
